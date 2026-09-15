@@ -1,0 +1,6 @@
+{
+  "name": "Moonlit Closet",
+  "description": "A luxury Pakistani bridal and party wear catalog showcase embodying elegance, refined craftsmanship, and timeless style.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
