@@ -4,7 +4,6 @@ import { Header } from './components/Header';
 import { Introduction } from './components/Introduction';
 import { BridalSection } from './components/BridalSection';
 import { PartyWearSection } from './components/PartyWearSection';
-import { Footer } from './components/Footer';
 import { DressDetailModal } from './components/DressDetailModal';
 import { AdminLoginModal } from './components/AdminLoginModal';
 import { AdminControlPanelModal } from './components/AdminControlPanelModal';
@@ -166,16 +165,6 @@ export default function App() {
           subtitleTag={siteContent.partyWear.subtitleTag}
         />
       </main>
-
-      {/* 5. FOOTER */}
-      <Footer
-        onNavigate={handleNavigate}
-        contactContent={siteContent.contact}
-        brandTitle={siteContent.brandTitle}
-        slogan={siteContent.slogan}
-        onAdminClick={handleAdminClick}
-        isAdmin={isAdmin}
-      />
 
       {/* Customer Dress Details Inspection Modal */}
       <DressDetailModal
