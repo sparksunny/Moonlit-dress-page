@@ -1,13 +1,30 @@
 import React from 'react';
-import { ArrowDownRight, Sparkles, Download } from 'lucide-react';
+import { Sparkles } from 'lucide-react';
 import { BotanicalBranch, DelicateHeart, OrnamentalDivider } from './FloralDecor';
+import { SiteContent } from '../types';
 import introHeroImg from '../assets/images/intro_bridal_hero_1789309137107.jpg';
 
 interface IntroductionProps {
-  onExploreClick: () => void;
+  onExploreClick?: () => void;
+  introContent?: SiteContent['intro'];
+  brandTitle?: string;
 }
 
-export const Introduction: React.FC<IntroductionProps> = ({ onExploreClick }) => {
+export const Introduction: React.FC<IntroductionProps> = ({
+  onExploreClick,
+  introContent,
+  brandTitle = 'Moonlit Closet',
+}) => {
+  const badge = introContent?.badge || 'Atelier Showcase';
+  const tag = introContent?.tag || 'The Art of Draping';
+  const title = introContent?.title || 'Elegance for Every Occasion';
+  const paragraph1 =
+    introContent?.paragraph1 ||
+    'Discover thoughtfully curated bridal and party wear designed to celebrate your most beautiful moments with timeless elegance, graceful details, and effortless style.';
+  const paragraph2 =
+    introContent?.paragraph2 ||
+    `“${brandTitle} brings together sophisticated silhouettes, delicate craftsmanship, luxurious fabrics, and refined embellishments for women who appreciate timeless fashion.”`;
+  const heroImageSrc = introContent?.heroImage || introHeroImg;
   return (
     <section
       id="home"
@@ -42,7 +59,7 @@ export const Introduction: React.FC<IntroductionProps> = ({ onExploreClick }) =>
               <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#EFE6DA]/70 border border-[#E3D6C6]">
                 <BotanicalBranch className="w-4 h-4 text-[#A88864]" />
                 <span className="text-[11px] uppercase tracking-[0.22em] text-[#5F4B3C] font-semibold">
-                  Atelier Showcase
+                  {badge}
                 </span>
                 <span className="text-[#A88864]">♡</span>
               </div>
@@ -50,10 +67,10 @@ export const Introduction: React.FC<IntroductionProps> = ({ onExploreClick }) =>
               {/* Main Heading */}
               <div className="space-y-2">
                 <span className="block font-cormorant italic text-lg sm:text-xl text-[#826C58] tracking-wider">
-                  The Art of Draping
+                  {tag}
                 </span>
                 <h1 className="font-serif text-3xl sm:text-5xl lg:text-[3.25rem] text-[#2C1D14] leading-[1.18] font-normal tracking-tight">
-                  Elegance for Every Occasion
+                  {title}
                 </h1>
               </div>
 
@@ -62,16 +79,13 @@ export const Introduction: React.FC<IntroductionProps> = ({ onExploreClick }) =>
 
               {/* Supporting Text */}
               <p className="text-base sm:text-lg text-[#513F32] font-light leading-relaxed">
-                Discover thoughtfully curated bridal and party wear designed to celebrate your most
-                beautiful moments with timeless elegance, graceful details, and effortless style.
+                {paragraph1}
               </p>
 
               {/* Short Brand Statement */}
               <div className="relative pl-5 py-2 border-l-2 border-[#D3BEA7] bg-[#FAF6F0]/60 rounded-r-lg">
                 <p className="text-sm sm:text-base text-[#47362B] leading-relaxed italic font-cormorant">
-                  “Moonlit Closet brings together sophisticated silhouettes, delicate craftsmanship,
-                  luxurious fabrics, and refined embellishments for women who appreciate timeless
-                  fashion.”
+                  {paragraph2}
                 </p>
               </div>
 
@@ -90,30 +104,6 @@ export const Introduction: React.FC<IntroductionProps> = ({ onExploreClick }) =>
                   <span className="text-xs tracking-wider uppercase font-medium">Bespoke Fit</span>
                 </div>
               </div>
-
-              {/* Tasteful Actions: Explore Collection & Download HTML for PC */}
-              <div className="pt-2 flex flex-wrap items-center gap-3">
-                <button
-                  id="explore-collection-btn"
-                  type="button"
-                  onClick={onExploreClick}
-                  className="group inline-flex items-center gap-3 px-7 py-3.5 rounded-full bg-[#322016] text-[#FAF6F0] text-xs uppercase tracking-[0.24em] font-medium transition-all duration-300 hover:bg-[#483324] hover:shadow-md hover:gap-4 focus:outline-hidden"
-                >
-                  <span>Explore Collection</span>
-                  <ArrowDownRight className="w-4 h-4 text-[#DFD1BF] transition-transform duration-300 group-hover:translate-x-0.5 group-hover:translate-y-0.5" />
-                </button>
-
-                <a
-                  id="intro-download-html-btn"
-                  href="/moonlit-closet.html"
-                  download="moonlit-closet.html"
-                  className="group inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-[#EFE6DA] hover:bg-[#E5D7C7] text-[#342217] text-xs uppercase tracking-[0.2em] font-semibold border border-[#DECBB8] transition-all hover:shadow-xs focus:outline-hidden"
-                  title="Download standalone HTML file to run offline on your PC"
-                >
-                  <Download className="w-4 h-4 text-[#8C6D4F] transition-transform group-hover:translate-y-0.5" />
-                  <span>Download HTML</span>
-                </a>
-              </div>
             </div>
 
             {/* Column 2: Large Fashion Image Layout (Cols 7-12) */}
@@ -130,8 +120,8 @@ export const Introduction: React.FC<IntroductionProps> = ({ onExploreClick }) =>
                 {/* Primary Image Container with elegant 3:4 aspect ratio */}
                 <div className="relative overflow-hidden rounded-xl bg-[#EFE9DF] aspect-[3/4] group">
                   <img
-                    src={introHeroImg}
-                    alt="Moonlit Closet South Asian Bridal Haute Couture Dress"
+                    src={heroImageSrc}
+                    alt={`${brandTitle} South Asian Bridal Haute Couture Dress`}
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-103"
                   />

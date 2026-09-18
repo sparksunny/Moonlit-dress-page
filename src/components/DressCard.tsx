@@ -1,14 +1,21 @@
 import React, { useState } from 'react';
-import { ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight, Edit2 } from 'lucide-react';
 import { DressDetail } from '../types';
 import { DelicateSparkle } from './FloralDecor';
 
 interface DressCardProps {
   dress: DressDetail;
   onViewDetails: (dress: DressDetail) => void;
+  isAdmin?: boolean;
+  onEdit?: (dress: DressDetail) => void;
 }
 
-export const DressCard: React.FC<DressCardProps> = ({ dress, onViewDetails }) => {
+export const DressCard: React.FC<DressCardProps> = ({
+  dress,
+  onViewDetails,
+  isAdmin = false,
+  onEdit,
+}) => {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
 
@@ -20,7 +27,7 @@ export const DressCard: React.FC<DressCardProps> = ({ dress, onViewDetails }) =>
   return (
     <div
       id={`dress-card-${dress.id}`}
-      className="group flex flex-col rounded-2xl bg-[#FDFBF7] border border-[#EBE1D4] hover:border-[#DAC7B0] transition-all duration-500 hover:shadow-md overflow-hidden"
+      className="group flex flex-col rounded-2xl bg-[#FDFBF7] border border-[#EBE1D4] hover:border-[#DAC7B0] transition-all duration-500 hover:shadow-md overflow-hidden relative"
     >
       {/* Image Frame with 3:4 aspect ratio */}
       <div className="relative aspect-[3/4] overflow-hidden bg-[#EFE9DF]">
@@ -53,10 +60,25 @@ export const DressCard: React.FC<DressCardProps> = ({ dress, onViewDetails }) =>
           </span>
         </div>
 
-        {/* Small sparkle in top-right */}
-        <div className="absolute top-3.5 right-3.5 w-7 h-7 rounded-full bg-[#FAF7F2]/80 backdrop-blur-xs border border-[#E2D5C4] flex items-center justify-center text-[#BFA075] opacity-80">
-          <DelicateSparkle className="w-3.5 h-3.5" />
-        </div>
+        {/* Admin Quick Edit Button or Small sparkle in top-right */}
+        {isAdmin && onEdit ? (
+          <button
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              onEdit(dress);
+            }}
+            className="absolute top-3.5 right-3.5 z-20 px-2.5 py-1 rounded-full bg-[#322016]/95 hover:bg-[#322016] text-[#FAF7F0] text-[10px] uppercase tracking-wider font-semibold border border-[#D5B895] shadow-sm flex items-center gap-1 transition-transform hover:scale-105 active:scale-95"
+            title="Edit this dress in Admin Panel"
+          >
+            <Edit2 className="w-3 h-3 text-[#D5B895]" />
+            <span>Edit</span>
+          </button>
+        ) : (
+          <div className="absolute top-3.5 right-3.5 w-7 h-7 rounded-full bg-[#FAF7F2]/80 backdrop-blur-xs border border-[#E2D5C4] flex items-center justify-center text-[#BFA075] opacity-80">
+            <DelicateSparkle className="w-3.5 h-3.5" />
+          </div>
+        )}
 
         {/* Quick View overlay on hover (desktop) */}
         <div className="absolute inset-x-4 bottom-4 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 hidden sm:block">

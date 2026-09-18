@@ -1,4 +1,4 @@
-import { DressDetail } from '../types';
+import { DressDetail, SiteContent } from '../types';
 
 import bridalModel1 from '../assets/images/bridal_model_one_1789309871195.jpg';
 import bridalModel2 from '../assets/images/bridal_model_two_1789309893513.jpg';
@@ -407,3 +407,35 @@ export const PARTY_WEAR: DressDetail[] = [
     ]
   }
 ];
+
+export const DEFAULT_SITE_CONTENT: SiteContent = {
+  brandTitle: 'Moonlit Closet',
+  slogan: 'Elegance and Style',
+  intro: {
+    badge: 'Atelier Showcase',
+    tag: 'The Art of Draping',
+    title: 'Elegance for Every Occasion',
+    paragraph1: 'Born from a devotion to classic Pakistani tailoring, Moonlit Closet presents a curated universe of couture and festive formals designed to transcend seasons.',
+    paragraph2: 'From heirloom bridal ensembles woven with hand-beaten gold zari to featherlight festive silhouettes in pure silk chiffon, each design is an intimate dialogue between time-honored artisanal craft and modern poise.',
+  },
+  bridal: {
+    badge: 'The Bridal Edit',
+    subtitleTag: 'Haute Couture',
+    title: 'Bridal Dresses',
+    subtitle: 'Timeless beauty for your most unforgettable moments.',
+  },
+  partyWear: {
+    badge: 'The Festive Edit',
+    subtitleTag: 'Pret & Luxury Formals',
+    title: 'Party Wear',
+    subtitle: 'Sophisticated silhouettes for celebratory evenings and festive gatherings.',
+  },
+  contact: {
+    email: 'hello@moonlitcloset.com',
+    phone: '+92 300 1234567',
+    address: 'Gulberg III, Lahore / Clifton, Karachi',
+    hours: 'Mon – Sat: 11:00 AM – 8:00 PM (By Appointment)',
+    brandStatement: 'Celebrating timeless fashion, graceful details, and unforgettable moments.',
+  },
+};
+

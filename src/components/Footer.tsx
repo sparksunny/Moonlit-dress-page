@@ -1,6 +1,7 @@
-import React from 'react';
-import { Instagram, Facebook, Phone, Mail, MapPin, Clock, Heart, ShoppingBag, Truck, Download } from 'lucide-react';
+import React, { useState } from 'react';
+import { Instagram, Facebook, Phone, Mail, MapPin, Clock, Heart, ShoppingBag, Truck, Sliders, Key } from 'lucide-react';
 import { BotanicalBranch, DelicateHeart, OrnamentalDivider } from './FloralDecor';
+import { SiteContent } from '../types';
 
 // Pinterest custom icon using clean SVG matching Lucide stroke style
 const PinterestIcon: React.FC<{ className?: string }> = ({ className = 'w-4 h-4' }) => (
@@ -16,9 +17,26 @@ const PinterestIcon: React.FC<{ className?: string }> = ({ className = 'w-4 h-4'
 
 interface FooterProps {
   onNavigate: (sectionId: string) => void;
+  contactContent?: SiteContent['contact'];
+  brandTitle?: string;
+  slogan?: string;
+  onAdminClick?: () => void;
+  isAdmin?: boolean;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
+export const Footer: React.FC<FooterProps> = ({
+  onNavigate,
+  contactContent,
+  brandTitle = 'Moonlit Closet',
+  slogan = 'Elegance and Style',
+  onAdminClick,
+  isAdmin = false,
+}) => {
+  const email = contactContent?.email || 'hello@moonlitcloset.com';
+  const phone = contactContent?.phone || '+92 300 1234567';
+  const address = contactContent?.address || 'Gulberg III, Lahore / Clifton, Karachi';
+  const hours = contactContent?.hours || 'Mon – Sat: 11:00 AM – 8:00 PM (By Appointment)';
+  const brandStatement = contactContent?.brandStatement || 'Celebrating timeless fashion, graceful details, and unforgettable moments.';
   const navItems = [
     { label: 'Home', id: 'home' },
     { label: 'About', id: 'about' },
@@ -65,17 +83,17 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           <div className="md:col-span-5 space-y-4">
             <div className="flex items-center gap-2">
               <span className="font-serif text-2xl sm:text-3xl tracking-[0.18em] text-[#FAF5ED] uppercase">
-                Moonlit Closet
+                {brandTitle}
               </span>
               <DelicateHeart className="w-4 h-4 text-[#C5A880]" />
             </div>
 
             <p className="font-cormorant italic text-base text-[#D4C1AE] tracking-widest">
-              “Elegance and Style”
+              “{slogan}”
             </p>
 
             <p className="text-sm text-[#C4B29E] leading-relaxed max-w-md pt-1 font-light">
-              Celebrating timeless fashion, graceful details, and unforgettable moments.
+              {brandStatement}
             </p>
 
             {/* Social Media Icons (Instagram, Facebook, Pinterest, WhatsApp) */}
@@ -157,10 +175,10 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 <div>
                   <span className="block text-[10px] uppercase tracking-wider text-[#98816E]">Email Catalog Inquiries</span>
                   <a
-                    href="mailto:hello@moonlitcloset.com"
+                    href={`mailto:${email}`}
                     className="hover:text-[#FAF5ED] transition-colors underline-offset-4 hover:underline"
                   >
-                    hello@moonlitcloset.com
+                    {email}
                   </a>
                 </div>
               </div>
@@ -170,10 +188,10 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 <div>
                   <span className="block text-[10px] uppercase tracking-wider text-[#98816E]">WhatsApp Concierge</span>
                   <a
-                    href="tel:+923001234567"
+                    href={`tel:${phone.replace(/\s+/g, '')}`}
                     className="hover:text-[#FAF5ED] transition-colors"
                   >
-                    +92 XXX XXXXXXX
+                    {phone}
                   </a>
                 </div>
               </div>
@@ -182,7 +200,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 <MapPin className="w-4 h-4 text-[#C5A880] shrink-0 mt-0.5" />
                 <div>
                   <span className="block text-[10px] uppercase tracking-wider text-[#98816E]">Atelier Studio</span>
-                  <span>Gulberg III, Lahore / Clifton, Karachi</span>
+                  <span>{address}</span>
                 </div>
               </div>
 
@@ -190,7 +208,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 <Clock className="w-4 h-4 text-[#C5A880] shrink-0 mt-0.5" />
                 <div>
                   <span className="block text-[10px] uppercase tracking-wider text-[#98816E]">Viewing Hours</span>
-                  <span>Mon – Sat: 11:00 AM – 8:00 PM (By Appointment)</span>
+                  <span>{hours}</span>
                 </div>
               </div>
             </div>
@@ -198,42 +216,28 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
         </div>
 
-        {/* Run Offline On PC / Download HTML Banner */}
-        <div className="mt-14 p-6 sm:p-7 rounded-2xl bg-[#342217] border border-[#4C3524] flex flex-col sm:flex-row items-center justify-between gap-6 shadow-sm">
-          <div className="space-y-1.5 text-center sm:text-left">
-            <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2.5">
-              <span className="font-serif text-base sm:text-lg text-[#FAF5ED] font-medium tracking-wide">
-                Run Offline On Your PC
-              </span>
-              <span className="text-[11px] px-2.5 py-0.5 rounded-full bg-[#483324] text-[#D8C7B4] border border-[#5C4230] font-medium">
-                Self-Contained .html File
-              </span>
-            </div>
-            <p className="text-xs text-[#C4B29E] max-w-xl font-light leading-relaxed">
-              Download the complete single-file HTML catalog with all Pakistani model photos and details. Double-click the file on your computer to open in Chrome, Edge, Safari, or Firefox — zero installation or internet required.
-            </p>
-          </div>
-          <a
-            id="footer-download-html-btn"
-            href="/moonlit-closet.html"
-            download="moonlit-closet.html"
-            className="shrink-0 inline-flex items-center gap-2.5 px-6 py-3.5 rounded-full bg-[#FAF7F0] hover:bg-[#FFFFFF] text-[#2C1C13] text-xs uppercase tracking-[0.2em] font-semibold shadow-md transition-all hover:scale-102"
-            title="Download standalone HTML file to your PC"
-          >
-            <Download className="w-4 h-4 text-[#8C6D4F]" />
-            <span>Download HTML</span>
-          </a>
-        </div>
-
         {/* Decorative Divider */}
         <div className="mt-12 pt-8 border-t border-[#3D2C20]">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#9E8876]">
             <p className="text-center sm:text-left">
-              © 2026 Moonlit Closet. All Rights Reserved.
+              © 2026 {brandTitle}. All Rights Reserved.
             </p>
-            <p className="font-cormorant italic text-sm text-[#BBA692]">
-              Single-Page Catalog &amp; Couture Showcase
-            </p>
+            <div className="flex items-center gap-4">
+              <p className="font-cormorant italic text-sm text-[#BBA692]">
+                Single-Page Catalog &amp; Couture Showcase
+              </p>
+              {onAdminClick && (
+                <button
+                  id="footer-admin-btn"
+                  type="button"
+                  onClick={onAdminClick}
+                  className="inline-flex items-center gap-1 text-[11px] text-[#A68F7B] hover:text-[#EAE0D4] underline-offset-2 hover:underline transition-colors"
+                >
+                  <Sliders className="w-3 h-3 text-[#C5A880]" />
+                  <span>{isAdmin ? 'Admin Panel (Active)' : 'Admin Login'}</span>
+                </button>
+              )}
+            </div>
           </div>
         </div>
       </div>

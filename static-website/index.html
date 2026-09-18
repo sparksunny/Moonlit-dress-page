@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MOONLIT CLOSET — Elegance and Style</title>
+  <meta name="description" content="A luxury Pakistani bridal and party wear catalog showcase embodying elegance, refined craftsmanship, and timeless style.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Alex+Brush&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- 1. HEADER SECTION -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="#home" class="brand-logo">
+          <span class="brand-title">Moonlit Closet <span style="color: #C5A880; font-size: 1rem;">♡</span></span>
+          <div class="brand-slogan">
+            <span class="brand-slogan-line"></span>
+            <span>Elegance and Style</span>
+          </div>
+        </a>
+
+        <nav class="nav-links">
+          <a href="#home" class="nav-link">Home</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#bridal" class="nav-link">Bridal Dresses</a>
+          <a href="#party-wear" class="nav-link">Party Wear</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+          <a href="#bridal" class="btn-primary">
+            <span>Explore Collection</span>
+            <span>↓</span>
+          </a>
+        </div>
+
+        <button class="mobile-nav-toggle" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu">
+          ☰
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="mobile-menu">
+      <a href="#home" class="nav-link" onclick="toggleMobileMenu()">Home</a>
+      <a href="#about" class="nav-link" onclick="toggleMobileMenu()">About</a>
+      <a href="#bridal" class="nav-link" onclick="toggleMobileMenu()">Bridal Dresses</a>
+      <a href="#party-wear" class="nav-link" onclick="toggleMobileMenu()">Party Wear</a>
+      <a href="#contact" class="nav-link" onclick="toggleMobileMenu()">Contact</a>
+    </div>
+  </header>
+
+  <!-- 2. INTRODUCTION / HERO SECTION -->
+  <section id="home" class="hero-section">
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 1.5rem; border-bottom: 1px solid #E8DDD0;">
+        <div style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.25em; color: #7B6654; font-weight: 500;">
+          <span>Moonlit Editorial</span>
+          <span style="color: #C5A880; margin: 0 0.5rem;">✦</span>
+          <span>Vol. 2026</span>
+        </div>
+        <div class="font-cormorant" style="font-style: italic; font-size: 0.95rem; color: #87715E;">
+          Refined Pakistani Couture
+        </div>
+      </div>
+
+      <div id="about" class="hero-grid">
+        <!-- Text presentation -->
+        <div>
+          <div class="pill-tag">
+            <span>Atelier Showcase</span>
+            <span style="color: #A88864;">♡</span>
+          </div>
+          <div style="margin-top: 1rem;">
+            <span class="hero-subtitle">The Art of Draping</span>
+            <h1 class="hero-title">Elegance for Every Occasion</h1>
+          </div>
+          <p class="hero-text">
+            Welcome to <strong>Moonlit Closet</strong>, where every garment is conceived as wearable poetry. Discover our bespoke repertoire of authentic Pakistani bridal masterpieces and celebratory evening wear, handcrafted in pure silks, shimmering organzas, and intricate zardozi needlework.
+          </p>
+          <div class="spec-grid">
+            <div class="spec-box">
+              <span class="spec-box-label">Craftsmanship</span>
+              <span class="spec-box-val">Zardozi &amp; Tilla</span>
+            </div>
+            <div class="spec-box">
+              <span class="spec-box-label">Fabrics</span>
+              <span class="spec-box-val">Pure Silk &amp; Net</span>
+            </div>
+            <div class="spec-box">
+              <span class="spec-box-label">Tailoring</span>
+              <span class="spec-box-val">Bespoke Fit</span>
+            </div>
+          </div>
+          <div style="margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 1rem;">
+            <a href="#bridal" class="btn-primary">Explore Bridal Edit ↓</a>
+            <a href="#party-wear" class="btn-secondary">Party Wear Collection →</a>
+          </div>
+        </div>
+
+        <!-- Fashion Image Showcase -->
+        <div class="fashion-frame">
+          <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: #7D6855; border-bottom: 1px solid #EDE3D6; padding-bottom: 0.5rem; margin-bottom: 0.75rem;">
+            <span class="font-serif" style="letter-spacing: 0.15em; text-transform: uppercase;">Moonlit Atelier</span>
+            <span class="font-script" style="font-size: 1.15rem; color: #5D4737;">Bride to Be ♡</span>
+          </div>
+          <div class="fashion-frame-inner">
+            <img src="images/hero.jpg" alt="Moonlit Closet Pakistani Bridal Haute Couture Model">
+            <div class="fashion-frame-badge">
+              <div>
+                <div style="font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.2em; color: #7A6655; font-weight: 700;">Signature Bridal Couture</div>
+                <div class="font-serif" style="font-size: 0.95rem; color: #2C1D14; font-weight: 600;">Heavily Embellished Ivory Peshwas</div>
+              </div>
+              <span style="color: #C5A880;">✧</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. BRIDAL DRESSES SECTION -->
+  <section id="bridal" class="catalog-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="pill-tag" style="margin-bottom: 0.75rem;">
+          <span>The Bridal Edit</span>
+          <span style="color: #C5A880;">✦</span>
+          <span class="font-cormorant" style="font-style: italic;">Pakistani Haute Couture</span>
+        </div>
+        <h2 class="section-title">Bridal Dresses</h2>
+        <p class="section-desc">Timeless beauty for your most unforgettable moments.</p>
+      </div>
+
+      <div class="cards-grid">
+
+        <div id="dress-card-bridal-1" class="dress-card" onclick="openDressModal('bridal-1')">
+          <div class="dress-card-img-wrap">
+            <img src="images/bridal-1.jpg" alt="Moonlit Ivory - Bridal Collection" loading="lazy">
+            <div class="card-category-pill">Bridal Collection</div>
+            <div class="card-inspect-overlay">
+              <span>Inspect Craftsmanship</span>
+              <span>↗</span>
+            </div>
+          </div>
+          <div class="dress-card-body">
+            <div>
+              <h3 class="dress-card-title">Moonlit Ivory</h3>
+              <p class="dress-card-subtitle">Heavily Hand-Embroidered Bridal Peshwas & Flared Net Lehenga</p>
+              <p class="dress-card-desc">A regal silhouette draped in sheer organza with celestial zardozi work and fine hand-sewn pearl filigree.</p>
+            </div>
+            <div class="dress-card-footer">
+              <span class="dress-card-tag">Pakistani Couture</span>
+              <span class="dress-card-action">
+                <span>View Details</span>
+                <span>→</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div id="dress-card-bridal-2" class="dress-card" onclick="openDressModal('bridal-2')">
+          <div class="dress-card-img-wrap">
+            <img src="images/bridal-2.jpg" alt="Pearl Blossom - Bridal Collection" loading="lazy">
+            <div class="card-category-pill">Bridal Collection</div>
+            <div class="card-inspect-overlay">
+              <span>Inspect Craftsmanship</span>
+              <span>↗</span>
+            </div>
+          </div>
+          <div class="dress-card-body">
+            <div>
+              <h3 class="dress-card-title">Pearl Blossom</h3>
+              <p class="dress-card-subtitle">Classic Floor-Length Kalidaar with Scalloped Tissue Dupatta</p>
+              <p class="dress-card-desc">Cascading floral arabesques with micro-pearl embellishment and a layered crinoline floor skirt.</p>
+            </div>
+            <div class="dress-card-footer">
+              <span class="dress-card-tag">Pakistani Couture</span>
+              <span class="dress-card-action">
+                <span>View Details</span>
+                <span>→</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div id="dress-card-bridal-3" class="dress-card" onclick="openDressModal('bridal-3')">
+          <div class="dress-card-img-wrap">
+            <img src="images/bridal-3.jpg" alt="Champagne Grace - Bridal Collection" loading="lazy">
+            <div class="card-category-pill">Bridal Collection</div>
+            <div class="card-inspect-overlay">
+              <span>Inspect Craftsmanship</span>
+              <span>↗</span>
+            </div>
+          </div>
+          <div class="dress-card-body">
+            <div>
+              <h3 class="dress-card-title">Champagne Grace</h3>
+              <p class="dress-card-subtitle">Regal Farshi Gharara & Kalidaar Kurti with Antique Dabka</p>
+              <p class="dress-card-desc">Subtle metallic champagne hues intertwined with antique dabka and fine sequin detailing.</p>
+            </div>
+            <div class="dress-card-footer">
+              <span class="dress-card-tag">Pakistani Couture</span>
+              <span class="dress-card-action">
+                <span>View Details</span>
+                <span>→</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div id="dress-card-bridal-4" class="dress-card" onclick="openDressModal('bridal-4')">
+          <div class="dress-card-img-wrap">
+            <img src="images/bridal-4.jpg" alt="Golden Garden - Bridal Collection" loading="lazy">
+            <div class="card-category-pill">Bridal Collection</div>
+            <div class="card-inspect-overlay">
+              <span>Inspect Craftsmanship</span>
+              <span>↗</span>
+            </div>
+          </div>
+          <div class="dress-card-body">
+            <div>
+              <h3 class="dress-card-title">Golden Garden</h3>
+              <p class="dress-card-subtitle">Blush & Ivory Peshwas Gown with Flora-Inspired Tilla</p>
+              <p class="dress-card-desc">Warm champagne gold tilla weave honoring heritage bridal grandeur with timeless poise.</p>
+            </div>
+            <div class="dress-card-footer">
+              <span class="dress-card-tag">Pakistani Couture</span>
+              <span class="dress-card-action">
+                <span>View Details</span>
+                <span>→</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div id="dress-card-bridal-5" class="dress-card" onclick="openDressModal('bridal-5')">
+          <div class="dress-card-img-wrap">
+            <img src="images/bridal-5.jpg" alt="Ivory Elegance - Bridal Collection" loading="lazy">
+            <div class="card-category-pill">Bridal Collection</div>
+            <div class="card-inspect-overlay">
+              <span>Inspect Craftsmanship</span>
+              <span>↗</span>
+            </div>
+          </div>
+          <div class="dress-card-body">
+            <div>
+              <h3 class="dress-card-title">Ivory Elegance</h3>
+              <p class="dress-card-subtitle">Regal Ivory & Champagne Gown with Fine Threadwork Kalis</p>
+              <p class="dress-card-desc">Clean modern cuts softened with romantic pearl clusters and botanical needlework.</p>
+            </div>
+            <div class="dress-card-footer">
+              <span class="dress-card-tag">Pakistani Couture</span>
+              <span class="dress-card-action">
+                <span>View Details</span>
+                <span>→</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div id="dress-card-bridal-6" class="dress-card" onclick="openDressModal('bridal-6')">
+          <div class="dress-card-img-wrap">
+            <img src="images/bridal-6.jpg" alt="Royal Bloom - Bridal Collection" loading="lazy">
+            <div class="card-category-pill">Bridal Collection</div>
+            <div class="card-inspect-overlay">
+              <span>Inspect Craftsmanship</span>
+              <span>↗</span>
+            </div>
+          </div>
+          <div class="dress-card-body">
+            <div>
+              <h3 class="dress-card-title">Royal Bloom</h3>
+              <p class="dress-card-subtitle">Opulent Embroidered Lehenga with Regal Resham Motifs</p>
+              <p class="dress-card-desc">A lavish display of royal floral tapestries woven in muted golds, ivory, and soft sand.</p>
+            </div>
+            <div class="dress-card-footer">
+              <span class="dress-card-tag">Pakistani Couture</span>
+              <span class="dress-card-action">
+                <span>View Details</span>
+                <span>→</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div id="dress-card-bridal-7" class="dress-card" onclick="openDressModal('bridal-7')">
+          <div class="dress-card-img-wrap">
+            <img src="images/bridal-7.jpg" alt="Celestial Embroidery - Bridal Collection" loading="lazy">
+            <div class="card-category-pill">Bridal Collection</div>
+            <div class="card-inspect-overlay">
+              <span>Inspect Craftsmanship</span>
+              <span>↗</span>
+            </div>
+          </div>
+          <div class="dress-card-body">
+            <div>
+              <h3 class="dress-card-title">Celestial Embroidery</h3>
+              <p class="dress-card-subtitle">Ethereal Sheer Overlay Peshwas with Starlit Sequins</p>
+              <p class="dress-card-desc">Drifting constellations of micro-crystals and silver zari across translucent champagne tulle.</p>
+            </div>
+            <div class="dress-card-footer">
+              <span class="dress-card-tag">Pakistani Couture</span>
+              <span class="dress-card-action">
+                <span>View Details</span>
+                <span>→</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div id="dress-card-bridal-8" class="dress-card" onclick="openDressModal('bridal-8')">
+          <div class="dress-card-img-wrap">
+            <img src="images/bridal-8.jpg" alt="Blush Heritage - Bridal Collection" loading="lazy">
+            <div class="card-category-pill">Bridal Collection</div>
+            <div class="card-inspect-overlay">
+              <span>Inspect Craftsmanship</span>
+              <span>↗</span>
+            </div>
+          </div>
+          <div class="dress-card-body">
+            <div>
+              <h3 class="dress-card-title">Blush Heritage</h3>
+              <p class="dress-card-subtitle">Subtle Rose-Champagne Kalidaar with Antique Silver Wirework</p>
+              <p class="dress-card-desc">A romantic fusion of faint blush warmth, ivory silk, and antique metallic hand-embroidery.</p>
+            </div>
+            <div class="dress-card-footer">
+              <span class="dress-card-tag">Pakistani Couture</span>
+              <span class="dress-card-action">
+                <span>View Details</span>
+                <span>→</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. PARTY WEAR SECTION -->
+  <section id="party-wear" class="catalog-section">
+    <div class="container">
+      <div class="section-header">
+        <div class="pill-tag" style="margin-bottom: 0.75rem;">
+          <span>Evening &amp; Festive Formal</span>
+          <span style="color: #C5A880;">✦</span>
+          <span class="font-cormorant" style="font-style: italic;">Pakistani Silhouettes</span>
+        </div>
+        <h2 class="section-title">Party Wear</h2>
+        <p class="section-desc">Graceful looks designed to make every celebration memorable.</p>
+      </div>
+
+      <div class="cards-grid">
+
+        <div id="dress-card-party-1" class="dress-card" onclick="openDressModal('party-1')">
+          <div class="dress-card-img-wrap">
+            <img src="images/party-1.jpg" alt="Moonlit Pearl - Party Wear" loading="lazy">
+            <div class="card-category-pill">Party Wear</div>
+            <div class="card-inspect-overlay">
+              <span>Inspect Craftsmanship</span>
+              <span>↗</span>
+            </div>
+          </div>
+          <div class="dress-card-body">
+            <div>
+              <h3 class="dress-card-title">Moonlit Pearl</h3>
+              <p class="dress-card-subtitle">Contemporary Scalloped Kurta & Flared Trouser Ensemble</p>
+              <p class="dress-card-desc">Crisp contemporary tailoring softened by pearl-dusted collars and shimmering sleeve borders.</p>
+            </div>
+            <div class="dress-card-footer">
+              <span class="dress-card-tag">Pakistani Couture</span>
+              <span class="dress-card-action">
+                <span>View Details</span>
+                <span>→</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div id="dress-card-party-2" class="dress-card" onclick="openDressModal('party-2')">
+          <div class="dress-card-img-wrap">
+            <img src="images/party-2.jpg" alt="Champagne Glow - Party Wear" loading="lazy">
+            <div class="card-category-pill">Party Wear</div>
+            <div class="card-inspect-overlay">
+              <span>Inspect Craftsmanship</span>
+              <span>↗</span>
+            </div>
+          </div>
+          <div class="dress-card-body">
+            <div>
+              <h3 class="dress-card-title">Champagne Glow</h3>
+              <p class="dress-card-subtitle">Sleek Gilded Cape & Column Slip Dress with Resham Work</p>
+              <p class="dress-card-desc">A luminous sheer cape adorned with geometric sequin lines layered over a minimalist slip.</p>
+            </div>
+            <div class="dress-card-footer">
+              <span class="dress-card-tag">Pakistani Couture</span>
+              <span class="dress-card-action">
+                <span>View Details</span>
+                <span>→</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div id="dress-card-party-3" class="dress-card" onclick="openDressModal('party-3')">
+          <div class="dress-card-img-wrap">
+            <img src="images/party-3.jpg" alt="Rose Mist - Party Wear" loading="lazy">
+            <div class="card-category-pill">Party Wear</div>
+            <div class="card-inspect-overlay">
+              <span>Inspect Craftsmanship</span>
+              <span>↗</span>
+            </div>
+          </div>
+          <div class="dress-card-body">
+            <div>
+              <h3 class="dress-card-title">Rose Mist</h3>
+              <p class="dress-card-subtitle">Dusty Rose Angrakha Silhouette with Silver Gota Patti</p>
+              <p class="dress-card-desc">A romantic crossover angrakha cut with intricate silver threadwork and flowing chiffon flare.</p>
+            </div>
+            <div class="dress-card-footer">
+              <span class="dress-card-tag">Pakistani Couture</span>
+              <span class="dress-card-action">
+                <span>View Details</span>
+                <span>→</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div id="dress-card-party-4" class="dress-card" onclick="openDressModal('party-4')">
+          <div class="dress-card-img-wrap">
+            <img src="images/party-4.jpg" alt="Golden Whisper - Party Wear" loading="lazy">
+            <div class="card-category-pill">Party Wear</div>
+            <div class="card-inspect-overlay">
+              <span>Inspect Craftsmanship</span>
+              <span>↗</span>
+            </div>
+          </div>
+          <div class="dress-card-body">
+            <div>
+              <h3 class="dress-card-title">Golden Whisper</h3>
+              <p class="dress-card-subtitle">Embroidered Festive Kurta with Organza Scalloped Sleeves</p>
+              <p class="dress-card-desc">Youthful festive flair featuring a structured silhouette and artfully draped organza dupatta.</p>
+            </div>
+            <div class="dress-card-footer">
+              <span class="dress-card-tag">Pakistani Couture</span>
+              <span class="dress-card-action">
+                <span>View Details</span>
+                <span>→</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div id="dress-card-party-5" class="dress-card" onclick="openDressModal('party-5')">
+          <div class="dress-card-img-wrap">
+            <img src="images/party-5.jpg" alt="Velvet Bloom - Party Wear" loading="lazy">
+            <div class="card-category-pill">Party Wear</div>
+            <div class="card-inspect-overlay">
+              <span>Inspect Craftsmanship</span>
+              <span>↗</span>
+            </div>
+          </div>
+          <div class="dress-card-body">
+            <div>
+              <h3 class="dress-card-title">Velvet Bloom</h3>
+              <p class="dress-card-subtitle">Plush Silk-Velvet Kurti with Intricate Zardozi Neckline</p>
+              <p class="dress-card-desc">Sumptuous micro-velvet tailored in a deep warm espresso hue with antique gold embroidery.</p>
+            </div>
+            <div class="dress-card-footer">
+              <span class="dress-card-tag">Pakistani Couture</span>
+              <span class="dress-card-action">
+                <span>View Details</span>
+                <span>→</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div id="dress-card-party-6" class="dress-card" onclick="openDressModal('party-6')">
+          <div class="dress-card-img-wrap">
+            <img src="images/party-6.jpg" alt="Soft Radiance - Party Wear" loading="lazy">
+            <div class="card-category-pill">Party Wear</div>
+            <div class="card-inspect-overlay">
+              <span>Inspect Craftsmanship</span>
+              <span>↗</span>
+            </div>
+          </div>
+          <div class="dress-card-body">
+            <div>
+              <h3 class="dress-card-title">Soft Radiance</h3>
+              <p class="dress-card-subtitle">Pastel Mint & Champagne Sharara Suit with Resham Jaal</p>
+              <p class="dress-card-desc">Delicate floral lattice embroidery over an opulent tiered sharara silhouette.</p>
+            </div>
+            <div class="dress-card-footer">
+              <span class="dress-card-tag">Pakistani Couture</span>
+              <span class="dress-card-action">
+                <span>View Details</span>
+                <span>→</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div id="dress-card-party-7" class="dress-card" onclick="openDressModal('party-7')">
+          <div class="dress-card-img-wrap">
+            <img src="images/party-7.jpg" alt="Evening Grace - Party Wear" loading="lazy">
+            <div class="card-category-pill">Party Wear</div>
+            <div class="card-inspect-overlay">
+              <span>Inspect Craftsmanship</span>
+              <span>↗</span>
+            </div>
+          </div>
+          <div class="dress-card-body">
+            <div>
+              <h3 class="dress-card-title">Evening Grace</h3>
+              <p class="dress-card-subtitle">Modern Draped Festive Formal with Embellished Belt</p>
+              <p class="dress-card-desc">Modern pre-pleated drape with a hand-embroidered waist belt and jewel-neck silhouette.</p>
+            </div>
+            <div class="dress-card-footer">
+              <span class="dress-card-tag">Pakistani Couture</span>
+              <span class="dress-card-action">
+                <span>View Details</span>
+                <span>→</span>
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div id="dress-card-party-8" class="dress-card" onclick="openDressModal('party-8')">
+          <div class="dress-card-img-wrap">
+            <img src="images/party-8.jpg" alt="Midnight Elegance - Party Wear" loading="lazy">
+            <div class="card-category-pill">Party Wear</div>
+            <div class="card-inspect-overlay">
+              <span>Inspect Craftsmanship</span>
+              <span>↗</span>
+            </div>
+          </div>
+          <div class="dress-card-body">
+            <div>
+              <h3 class="dress-card-title">Midnight Elegance</h3>
+              <p class="dress-card-subtitle">Deep Cocoa Kalidaar with Liquid Gold Zari Embroidery</p>
+              <p class="dress-card-desc">A rich chocolate-brown canvas illuminated by luminous liquid gold zari and sequin lines.</p>
+            </div>
+            <div class="dress-card-footer">
+              <span class="dress-card-tag">Pakistani Couture</span>
+              <span class="dress-card-action">
+                <span>View Details</span>
+                <span>→</span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. FOOTER / CONTACT SECTION -->
+  <footer id="contact" class="site-footer">
+    <div class="footer-top-strip">
+      ✦ Trending Pakistani Haute Couture Picks &nbsp; • &nbsp; Atelier Consultations Nationwide &nbsp; • &nbsp; Made with Love &amp; Artistry
+    </div>
+
+    <div class="container footer-main">
+      <div class="footer-grid">
+        <div>
+          <span class="footer-title">Moonlit Closet <span style="color: #C5A880;">♡</span></span>
+          <p class="font-cormorant" style="font-style: italic; font-size: 1.15rem; color: #D4C1AE; letter-spacing: 0.1em; margin-top: 0.25rem;">“Elegance and Style”</p>
+          <p style="font-size: 0.85rem; color: #C4B29E; line-height: 1.7; margin-top: 1rem; font-weight: 300;">
+            Celebrating timeless fashion, graceful details, and unforgettable moments. Hand-embroidered Pakistani couture made with master craftsmanship.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-section-title">Quick Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Atelier</a></li>
+            <li><a href="#bridal">Bridal Dresses</a></li>
+            <li><a href="#party-wear">Party Wear</a></li>
+            <li><a href="#contact">Contact &amp; Appointments</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-section-title">Flagship Atelier</h4>
+          <p style="font-size: 0.85rem; color: #C4B29E; line-height: 1.6; background-color: #ee9393;">
+            Moonlit Couture Salon<br>
+            M.M. Alam Road, Gulberg III, Lahore<br>
+            Phone: +92 42 3578 9000<br>
+            Email: concierge@moonlitcloset.com
+          </p>
+          <p style="font-size: 0.75rem; color: #9E8775; margin-top: 0.75rem;">
+            Hours: Monday – Saturday, 11:00 AM – 8:00 PM
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Moonlit Closet. All rights reserved.</span>
+        <span>Light cream luxury theme &amp; authentic Pakistani couture.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- DRESS DETAIL MODAL -->
+  <div id="modal-backdrop" class="modal-backdrop" onclick="closeDressModal()">
+    <div class="modal-container" onclick="event.stopPropagation()">
+      <button class="modal-close" onclick="closeDressModal()" aria-label="Close dialog">✕</button>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
