@@ -1,6 +1,5 @@
 import React from 'react';
-import { Heart, ShoppingBag, Truck, Sliders } from 'lucide-react';
-import { DelicateHeart } from './FloralDecor';
+import { Mail, MessageCircle, MapPin, Clock, Sparkles, Sliders } from 'lucide-react';
 import { SiteContent } from '../types';
 
 interface FooterProps {
@@ -15,22 +14,21 @@ interface FooterProps {
 export const Footer: React.FC<FooterProps> = ({
   onNavigate,
   contactContent,
-  brandTitle = 'Moonlit Closet',
-  slogan = 'Elegance and Style',
+  brandTitle = 'MOONLIT CLOSET',
+  slogan = '• Crafted for moments that become memories.',
   onAdminClick,
   isAdmin = false,
 }) => {
-  const email = contactContent?.email || 'hello@moonlitcloset.com';
-  const phone = contactContent?.phone || '+92 300 1234567';
-  const address = contactContent?.address || 'Gulberg III, Lahore / Clifton, Karachi';
-  const hours = contactContent?.hours || 'Mon – Sat: 11:00 AM – 8:00 PM (By Appointment)';
-  const brandStatement = contactContent?.brandStatement || 'Celebrating timeless fashion, graceful details, and unforgettable moments.';
+  const email = contactContent?.email || 'moonlitgemjewels@gmail.com';
+  const whatsapp = contactContent?.phone || '+1 716-313-1615';
+  const location = contactContent?.address || 'Houston / Florida USA';
+  const workingHours = contactContent?.hours || '10:00 AM – 8:00 PM';
+
   const navItems = [
     { label: 'Home', id: 'home' },
     { label: 'About', id: 'about' },
     { label: 'Bridal Dresses', id: 'bridal' },
     { label: 'Party Wear', id: 'party-wear' },
-    { label: 'Contact', id: 'contact' },
   ];
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
@@ -38,134 +36,158 @@ export const Footer: React.FC<FooterProps> = ({
     onNavigate(id);
   };
 
+  // WhatsApp link (wa.me) for instant chat without direct telephone dialing
+  const whatsappDigits = whatsapp.replace(/[^0-9]/g, '');
+  const whatsappUrl = `https://wa.me/${whatsappDigits}`;
+
   return (
     <footer
       id="contact"
-      className="bg-[#2A1B12] text-[#EFE4D6] relative overflow-hidden border-t border-[#443023]"
+      className="bg-[#770000] text-white relative overflow-hidden border-t-2 border-[#5e0000]"
     >
-      {/* Reference-Style Upper Highlight Banner Bar */}
-      <div className="bg-[#372418] border-b border-[#4A3425] py-3.5 px-4">
-        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-around gap-4 text-xs uppercase tracking-[0.2em] text-[#D8C7B4]">
-          <div className="flex items-center gap-2">
-            <ShoppingBag className="w-4 h-4 text-[#C5A880]" />
-            <span>Trending Catalog Picks</span>
-          </div>
-          <div className="hidden sm:block text-[#6A5140]">•</div>
-          <div className="flex items-center gap-2">
-            <Truck className="w-4 h-4 text-[#C5A880]" />
-            <span>Atelier Delivery Nationwide</span>
-          </div>
-          <div className="hidden sm:block text-[#6A5140]">•</div>
-          <div className="flex items-center gap-2">
-            <Heart className="w-4 h-4 text-[#C5A880]" />
-            <span>Made with Love &amp; Artistry</span>
-          </div>
-        </div>
-      </div>
+      {/* Subtle ambient lighting for luxury depth */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[200px] bg-white/5 rounded-full blur-3xl pointer-events-none" />
 
-      {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 lg:gap-14">
           
-          {/* Brand Presentation & Statement (Cols 1-5) */}
-          <div className="md:col-span-5 space-y-4">
-            <div className="flex items-center gap-2">
-              <span className="font-serif text-2xl sm:text-3xl tracking-[0.18em] text-[#FAF5ED] uppercase">
+          {/* Brand Presentation & Subheading (Cols 1-6) */}
+          <div className="md:col-span-6 space-y-4">
+            <div className="flex items-center gap-2.5">
+              <h2 className="font-serif text-2xl sm:text-3xl lg:text-4xl tracking-[0.2em] text-white uppercase font-medium">
                 {brandTitle}
-              </span>
-              <DelicateHeart className="w-4 h-4 text-[#C5A880]" />
+              </h2>
+              <Sparkles className="w-5 h-5 text-white/80 shrink-0" />
             </div>
 
-            <p className="font-cormorant italic text-base text-[#D4C1AE] tracking-widest">
-              “{slogan}”
+            <p className="font-cormorant italic text-base sm:text-lg text-white/90 tracking-wide font-light">
+              {slogan}
             </p>
 
-            <p className="text-sm text-[#C4B29E] leading-relaxed max-w-md pt-1 font-light">
-              {brandStatement}
+            <p className="text-xs sm:text-sm text-white/80 leading-relaxed max-w-md pt-2">
+              Discover timeless South Asian haute couture, heirloom bridal lehengas, and refined luxury party wear meticulously tailored for unforgettable celebrations.
             </p>
+
+            {/* Quick Navigation Links */}
+            <div className="pt-4">
+              <span className="block text-[11px] uppercase tracking-[0.22em] text-white/70 font-semibold mb-3">
+                Quick Navigation
+              </span>
+              <ul className="flex flex-wrap items-center gap-x-6 gap-y-2">
+                {navItems.map((item) => (
+                  <li key={item.id}>
+                    <a
+                      href={`#${item.id}`}
+                      onClick={(e) => handleLinkClick(e, item.id)}
+                      className="text-xs uppercase tracking-[0.18em] text-white/85 hover:text-white transition-colors duration-200 hover:underline underline-offset-4"
+                    >
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
-          {/* Catalog Navigation Links (Cols 6-8) */}
-          <div className="md:col-span-3 space-y-4">
-            <span className="block text-xs uppercase tracking-[0.25em] text-[#C5A880] font-semibold border-b border-[#432F23] pb-2">
-              Catalog Navigation
-            </span>
-            <ul className="space-y-2.5">
-              {navItems.map((item) => (
-                <li key={item.id}>
+          {/* Contact Details with Proper Icons (Cols 7-12) */}
+          <div className="md:col-span-6 lg:col-span-5 lg:col-start-8 space-y-5">
+            <h3 className="text-xs uppercase tracking-[0.25em] text-white/90 font-semibold border-b border-white/20 pb-2.5">
+              Contact &amp; Atelier Inquiries
+            </h3>
+
+            <div className="space-y-4 text-sm">
+              {/* Email */}
+              <div className="flex items-start gap-3.5 group">
+                <div className="w-9 h-9 rounded-full bg-white/10 border border-white/20 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-white/20 transition-colors">
+                  <Mail className="w-4 h-4 text-white" />
+                </div>
+                <div>
+                  <span className="block text-[10px] uppercase tracking-wider text-white/70 font-medium">
+                    Email
+                  </span>
                   <a
-                    href={`#${item.id}`}
-                    onClick={(e) => handleLinkClick(e, item.id)}
-                    className="text-xs uppercase tracking-[0.2em] text-[#C4B29E] hover:text-[#FAF5ED] transition-colors inline-flex items-center gap-2"
+                    href={`mailto:${email}`}
+                    className="text-white hover:text-white/90 font-medium underline underline-offset-4 transition-colors break-all"
                   >
-                    <span className="text-[#846F5F] text-[10px]">✧</span>
-                    <span>{item.label}</span>
+                    {email}
                   </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Simple Contact Information Area (Cols 9-12) */}
-          <div className="md:col-span-4 space-y-4">
-            <span className="block text-xs uppercase tracking-[0.25em] text-[#C5A880] font-semibold border-b border-[#432F23] pb-2">
-              Bespoke Contact &amp; Atelier
-            </span>
-            
-            <div className="space-y-3.5 text-xs text-[#C4B29E]">
-              <div>
-                <span className="block text-[10px] uppercase tracking-wider text-[#98816E] mb-0.5">Email Catalog Inquiries</span>
-                <a
-                  href={`mailto:${email}`}
-                  className="text-[#EFE4D6] hover:text-[#FAF5ED] transition-colors underline-offset-4 hover:underline"
-                >
-                  {email}
-                </a>
+                </div>
               </div>
 
-              <div>
-                <span className="block text-[10px] uppercase tracking-wider text-[#98816E] mb-0.5">Concierge Assistance</span>
-                <span className="text-[#EFE4D6] tracking-wide select-all">
-                  {phone}
-                </span>
+              {/* WhatsApp (No direct dialing; opens WhatsApp messaging chat) */}
+              <div className="flex items-start gap-3.5 group">
+                <div className="w-9 h-9 rounded-full bg-white/10 border border-white/20 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-white/20 transition-colors">
+                  <MessageCircle className="w-4 h-4 text-white" />
+                </div>
+                <div>
+                  <span className="block text-[10px] uppercase tracking-wider text-white/70 font-medium">
+                    WhatsApp
+                  </span>
+                  <a
+                    href={whatsappUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-white hover:text-white/90 font-medium tracking-wide underline underline-offset-4 transition-colors"
+                    title="Open WhatsApp chat"
+                  >
+                    {whatsapp}
+                  </a>
+                </div>
               </div>
 
-              <div>
-                <span className="block text-[10px] uppercase tracking-wider text-[#98816E] mb-0.5">Atelier Studio</span>
-                <span className="text-[#EFE4D6]">{address}</span>
+              {/* Location */}
+              <div className="flex items-start gap-3.5 group">
+                <div className="w-9 h-9 rounded-full bg-white/10 border border-white/20 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-white/20 transition-colors">
+                  <MapPin className="w-4 h-4 text-white" />
+                </div>
+                <div>
+                  <span className="block text-[10px] uppercase tracking-wider text-white/70 font-medium">
+                    Location
+                  </span>
+                  <span className="text-white font-medium">
+                    {location}
+                  </span>
+                </div>
               </div>
 
-              <div>
-                <span className="block text-[10px] uppercase tracking-wider text-[#98816E] mb-0.5">Viewing Hours</span>
-                <span className="text-[#EFE4D6]">{hours}</span>
+              {/* Working Hours */}
+              <div className="flex items-start gap-3.5 group">
+                <div className="w-9 h-9 rounded-full bg-white/10 border border-white/20 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-white/20 transition-colors">
+                  <Clock className="w-4 h-4 text-white" />
+                </div>
+                <div>
+                  <span className="block text-[10px] uppercase tracking-wider text-white/70 font-medium">
+                    Working Hours
+                  </span>
+                  <span className="text-white font-medium">
+                    {workingHours}
+                  </span>
+                </div>
               </div>
             </div>
           </div>
 
         </div>
 
-        {/* Decorative Divider */}
-        <div className="mt-12 pt-8 border-t border-[#3D2C20]">
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#9E8876]">
-            <p className="text-center sm:text-left">
-              © 2026 {brandTitle}. All Rights Reserved.
-            </p>
-            <div className="flex items-center gap-4">
-              <p className="font-cormorant italic text-sm text-[#BBA692]">
-                Single-Page Catalog &amp; Couture Showcase
-              </p>
-              {onAdminClick && (
-                <button
-                  id="footer-admin-btn"
-                  type="button"
-                  onClick={onAdminClick}
-                  className="inline-flex items-center gap-1 text-[11px] text-[#A68F7B] hover:text-[#EAE0D4] underline-offset-2 hover:underline transition-colors"
-                >
-                  <Sliders className="w-3 h-3 text-[#C5A880]" />
-                  <span>{isAdmin ? 'Admin Panel (Active)' : 'Admin Login'}</span>
-                </button>
-              )}
-            </div>
+        {/* Bottom Bar: Copyright & Admin Portal */}
+        <div className="mt-12 pt-6 border-t border-white/15 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-white/75">
+          <p className="text-center sm:text-left font-light tracking-wider">
+            © {new Date().getFullYear()} {brandTitle}. All Rights Reserved.
+          </p>
+
+          <div className="flex items-center gap-4">
+            <span className="hidden sm:inline-block text-white/50">•</span>
+            {onAdminClick && (
+              <button
+                id="footer-admin-btn"
+                type="button"
+                onClick={onAdminClick}
+                className="inline-flex items-center gap-1.5 text-xs text-white/80 hover:text-white underline-offset-2 hover:underline transition-colors focus:outline-hidden"
+              >
+                <Sliders className="w-3.5 h-3.5 text-white/80" />
+                <span>{isAdmin ? 'Admin Dashboard (Active)' : 'Admin Access'}</span>
+              </button>
+            )}
           </div>
         </div>
       </div>

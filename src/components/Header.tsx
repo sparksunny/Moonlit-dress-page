@@ -35,6 +35,7 @@ export const Header: React.FC<HeaderProps> = ({
     { label: 'About', id: 'about' },
     { label: 'Bridal Dresses', id: 'bridal' },
     { label: 'Party Wear', id: 'party-wear' },
+    { label: 'Contact', id: 'contact' },
   ];
 
   const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {

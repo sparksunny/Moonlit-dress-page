@@ -431,11 +431,11 @@ export const DEFAULT_SITE_CONTENT: SiteContent = {
     subtitle: 'Sophisticated silhouettes for celebratory evenings and festive gatherings.',
   },
   contact: {
-    email: 'hello@moonlitcloset.com',
-    phone: '+92 300 1234567',
-    address: 'Gulberg III, Lahore / Clifton, Karachi',
-    hours: 'Mon – Sat: 11:00 AM – 8:00 PM (By Appointment)',
-    brandStatement: 'Celebrating timeless fashion, graceful details, and unforgettable moments.',
+    email: 'moonlitgemjewels@gmail.com',
+    phone: '+1 716-313-1615',
+    address: 'Houston / Florida USA',
+    hours: '10:00 AM – 8:00 PM',
+    brandStatement: 'Crafted for moments that become memories.',
   },
 };
 

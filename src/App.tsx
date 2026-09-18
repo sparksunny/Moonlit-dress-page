@@ -4,6 +4,7 @@ import { Header } from './components/Header';
 import { Introduction } from './components/Introduction';
 import { BridalSection } from './components/BridalSection';
 import { PartyWearSection } from './components/PartyWearSection';
+import { Footer } from './components/Footer';
 import { DressDetailModal } from './components/DressDetailModal';
 import { AdminLoginModal } from './components/AdminLoginModal';
 import { AdminControlPanelModal } from './components/AdminControlPanelModal';
@@ -165,6 +166,16 @@ export default function App() {
           subtitleTag={siteContent.partyWear.subtitleTag}
         />
       </main>
+
+      {/* 5. PAGE FOOTER */}
+      <Footer
+        onNavigate={handleNavigate}
+        contactContent={siteContent.contact}
+        brandTitle="MOONLIT CLOSET"
+        slogan="• Crafted for moments that become memories."
+        onAdminClick={handleAdminClick}
+        isAdmin={isAdmin}
+      />
 
       {/* Customer Dress Details Inspection Modal */}
       <DressDetailModal
